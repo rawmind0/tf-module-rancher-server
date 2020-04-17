@@ -2,7 +2,6 @@ variable "kubectl_image" {
   type        = string
   description = "Kubectl docker image"
   default     = "bitnami/kubectl:1.17.4"
-  description = "Kubectl docker image to run k8s commands"
 }
 
 variable "cert_manager" {

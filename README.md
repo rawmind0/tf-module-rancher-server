@@ -82,7 +82,7 @@ Add the following to your tf file:
 module "rancher_server" {
   source = "github.com/rawmind0/tf-module-rancher-server"
 
-  hostname = "rancher.${local.domain}"
+  rancher_hostname = "rancher.my.org"
   rancher_k8s = {
     host = module.rke-cluster.kubeconfig_api_server_url
     client_certificate     = module.rke-cluster.kubeconfig_client_cert
