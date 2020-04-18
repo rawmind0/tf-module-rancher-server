@@ -49,6 +49,9 @@ resource "kubernetes_job" "install_cert_manager_crds" {
       }
     }
   }
+  provisioner "local-exec" {
+    command = "${local.kubectl} wait --for=condition=complete --timeout=90s job/${kubernetes_job.install_cert_manager_crds.metadata[0].name}"
+  }
 }
 
 # Create cert-manager namespace
@@ -75,6 +78,9 @@ resource "kubernetes_job" "create_cert_manager_ns" {
       }
     }
   }
+  provisioner "local-exec" {
+    command = "${local.kubectl} wait --for=condition=complete --timeout=90s job/${kubernetes_job.create_cert_manager_ns.metadata[0].name}"
+  }
 }
 
 # Create cattle-system namespace for Rancher
@@ -100,5 +106,8 @@ resource "kubernetes_job" "create_cattle_system_ns" {
         restart_policy                  = "Never"
       }
     }
+  }
+  provisioner "local-exec" {
+    command = "${local.kubectl} wait --for=condition=complete --timeout=90s job/${kubernetes_job.create_cattle_system_ns.metadata[0].name}"
   }
 }
