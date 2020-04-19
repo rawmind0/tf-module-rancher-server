@@ -50,7 +50,7 @@ resource "kubernetes_job" "install_cert_manager_crds" {
     }
   }
   provisioner "local-exec" {
-    command = "${local.kubectl} wait --for=condition=complete --timeout=90s job/${kubernetes_job.install_cert_manager_crds.metadata[0].name}"
+    command = "sleep 30s"
   }
 }
 
@@ -79,7 +79,7 @@ resource "kubernetes_job" "create_cert_manager_ns" {
     }
   }
   provisioner "local-exec" {
-    command = "${local.kubectl} wait --for=condition=complete --timeout=90s job/${kubernetes_job.create_cert_manager_ns.metadata[0].name}"
+    command = "sleep 30s"
   }
 }
 
@@ -108,6 +108,6 @@ resource "kubernetes_job" "create_cattle_system_ns" {
     }
   }
   provisioner "local-exec" {
-    command = "${local.kubectl} wait --for=condition=complete --timeout=90s job/${kubernetes_job.create_cattle_system_ns.metadata[0].name}"
+    command = "sleep 30s"
   }
 }
