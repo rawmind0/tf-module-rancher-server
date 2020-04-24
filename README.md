@@ -52,6 +52,12 @@ variable "rancher_server" {
   description = "Rancher server helm chart properties. Chart sets can be added using chart_set param"
 }
 
+variable "rancher_replica" {
+  type = number
+  description = "Rancher server replica to set on deployment"
+  default = 3
+}
+
 variable "kubectl_image" {
   default     = "bitnami/kubectl:1.17.4"
   description = "Kubectl docker image"

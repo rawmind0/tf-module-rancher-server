@@ -37,6 +37,11 @@ resource "helm_release" "rancher_server" {
     value = var.rancher_hostname
   }
 
+  set {
+    name  = "replica"
+    value = var.rancher_replica
+  }
+
   dynamic set {
     for_each = var.rancher_server.chart_set
     content {

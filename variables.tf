@@ -47,6 +47,12 @@ variable "rancher_hostname" {
   description = "Rancher server hostname to set on deployment"
 }
 
+variable "rancher_replica" {
+  type = number
+  description = "Rancher server replica to set on deployment"
+  default = 3
+}
+
 variable "rancher_k8s" {
   type = object({
     host = string
