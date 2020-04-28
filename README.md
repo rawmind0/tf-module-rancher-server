@@ -52,9 +52,9 @@ variable "rancher_server" {
   description = "Rancher server helm chart properties. Chart sets can be added using chart_set param"
 }
 
-variable "rancher_replica" {
+variable "rancher_replicas" {
   type = number
-  description = "Rancher server replica to set on deployment"
+  description = "Rancher server replicas to set on deployment"
   default = 3
 }
 

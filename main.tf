@@ -38,8 +38,8 @@ resource "helm_release" "rancher_server" {
   }
 
   set {
-    name  = "replica"
-    value = var.rancher_replica
+    name  = "replicas"
+    value = var.rancher_replicas
   }
 
   dynamic set {

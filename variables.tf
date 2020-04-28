@@ -47,9 +47,9 @@ variable "rancher_hostname" {
   description = "Rancher server hostname to set on deployment"
 }
 
-variable "rancher_replica" {
+variable "rancher_replicas" {
   type = number
-  description = "Rancher server replica to set on deployment"
+  description = "Rancher server replicas to set on deployment"
   default = 3
 }
 
