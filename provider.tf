@@ -1,7 +1,5 @@
 # Kubernetes provider
 provider "kubernetes" {
-  version = "1.11.1"
-
   host = var.rancher_k8s.host
   client_certificate     = var.rancher_k8s.client_certificate
   client_key             = var.rancher_k8s.client_key
@@ -12,8 +10,6 @@ provider "kubernetes" {
 
 # Helm provider
 provider "helm" {
-  version = "1.1.1"
-
   kubernetes {
     host = var.rancher_k8s.host
     client_certificate     = var.rancher_k8s.client_certificate
